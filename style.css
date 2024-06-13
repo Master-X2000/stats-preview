@@ -1,0 +1,175 @@
+/* || FONT LINK*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+/* || RESETS */
+
+*,
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img,
+canvas,
+svg{
+    display:block;
+    width: 100%;
+    height:auto;
+}
+
+/* || VARIABLES */
+
+:root{
+    --BODY-BGCOLOR: hsl(233, 47%, 7%);
+    --CARD-BGCOLOR: hsl(244, 38%, 16%);
+    --ACCENT: hsl(277, 64%, 61%);
+
+    --WHITE: hsl(0, 0%, 100%);
+    --MAIN-PARAGRAPH: hsla(0, 0%, 100%, 0.75);
+    --STATS-HEADINGS: hsla(0, 0%, 100%, 0.6);
+}
+
+body{
+    display:grid;
+    place-content:center;
+    background-color: var(--BODY-BGCOLOR);
+    min-height:100svh;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.container{
+    max-width:39rem;
+    background:var(--CARD-BGCOLOR);
+    border-radius:7px;
+    overflow:hidden;
+    margin:1rem;
+}
+
+/* body::before{
+    content:"";
+    width:100%;
+    height:100svh;
+    background:var(--ACCENT);
+    background-blend-mode:soft-light;
+} */
+
+.image-desktop{
+    display:none;
+}
+
+.info{
+    padding:1rem;
+    display:grid;
+    text-align:center;
+    gap:1rem;
+}
+
+.top{
+    display:grid;
+    gap:0.5rem;
+}
+
+.top, .bold {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading{
+    font-size:1.1rem;
+}
+
+.top p{
+    font-size:0.8rem;
+}
+
+.heading, .bold {
+    color: var(--WHITE);
+    font-weight:700;
+
+}
+
+.bold{
+    font-size:0.8rem;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.heading .accent{
+    color: var(--ACCENT);
+}
+
+.bottom{
+    display:grid;
+    place-content:center;
+}
+
+.bottom ul{
+    color:var(--STATS-HEADINGS);
+    font-size:15px;
+    list-style-type:none;
+    display:grid;
+    place-content:center; 
+    gap:2rem;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bottom ul li{
+    display:grid;
+    place-content:center; 
+    font-size:0.5rem;
+    font-family:'Lexend Deca', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+.explain{
+    color:var(--MAIN-PARAGRAPH);
+    font-weight:400;
+    font-size:15px;
+}
+
+@media(min-width:540px){
+
+    .container{
+        display:grid;
+        place-content:center;
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:
+        "left right";
+    }
+
+    .info{
+        grid-area:left;
+        text-align:left;
+        gap:0.2rem;
+        padding:1.5rem 2rem;
+    }
+
+    .top{
+        gap:0.2rem;
+    }
+
+    .image-group{
+        grid-area:right;
+    }
+
+    .image-desktop{
+        display:block;
+    }
+
+    .image-mobile{
+        display:none;
+    }
+
+    .bottom ul{
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align:left;
+
+    }
+
+}
+
+.attribution { font-size: 11px; text-align: center; color:var(--STATS-HEADINGS);}
+.attribution a { color: hsl(228, 45%, 44%); }
